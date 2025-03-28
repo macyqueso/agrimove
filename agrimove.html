@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agrimove Main Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="agrimove.css">
+    <link rel="icon" type="image/png" href="agrimove logo png.png">
+</head>
+<body class="w-full overflow-x-hidden">
+
+    <!--NAVIGATION BAR-->
+    <nav id = "main">
+        <nav class="relative z-50 flex items-center justify-between px-12 py-4 bg-white">
+
+            <!-- LOGO -->
+            <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
+
+            <!-- SIGNUP BUTTON -->
+            <div class="flex items-center space-x-4">
+                <button class="w-30 md:w-40 h-10 bg-gray-300 border-2 border-black hover:bg-black hover:text-white text-black px-4 py-2 rounded-2xl flex items-center justify-center">
+                    Sign Up</button>
+
+                <!--HAMBURGER MENU BUTTON-->
+                <button @click="toggleMenu" class="focus:outline-none">
+                    <img src="hamburger-menu.png" alt="hamburger menu" width="40" height="40">
+                </button>
+            </div>
+
+            <!--DROPDOWN MENU-->
+            <div v-if="menuOpen" class="absolute -ml-4 top-16 right-4 w-30 md:w-40 bg-white flex flex-col space-y-4 py-4 px-6 rounded-2xl z-50 text-lg text-right">
+                <a href="#" class="text-black font-medium">About</a>
+                <a href="#features" class="text-black font-medium">Features</a>
+                <a href="#reviews" class="text-black font-medium">Reviews</a>
+                <a href="#contacts" class="text-black font-medium">Contact</a>
+            </div>
+
+            <!--VUE FOR DROPDOWN MENU-->
+            <script>
+                const main = Vue.createApp({
+                    data() {
+                        return {menuOpen: false};},
+                    methods: {toggleMenu() {this.menuOpen = !this.menuOpen;}}
+                });
+                main.mount("#main");
+            </script>
+
+        </nav>
+    </nav>
+
+    <!--GRAY ROUND BOXES-->
+    <section class="relative w-80 h-[40vh] md:w-[1430px] mx-auto md:h-[60vh] bg-gray-300 rounded-2xl items-center flex justify-center px-4 md:px-12">
+    </section>
+
+    <section class="hidden md:block relative md:bottom-[35px] md:w-[600px] md:left-[871px] min-h-[20vh] bg-gray-300 rounded-2xl flex items-center justify-center px-4 md:px-12">
+    </section>
+
+    <!--WELCOME SECTION-->
+    <div class="absolute  w-full text-center top-[60%] left-1/2 transform -translate-x-1/2 md:w-auto md:text-left md:top-auto md:bottom-24 md:left-[450px]">
+        <h1 class="text-3xl md:text-6xl font-bold">Welcome to Agrimove</h1>
+        <p class="text-lg md:text-2xl mt-2">Grow More, Worry Less.</p>
+    </div>
+
+        <!--FEATURES-->
+        <section id="features" class="md:80 mt-56 scroll-mt-56">
+            <div id="features" class="flex md:items-center md:justify-center md:overflow-visible px-10 gap-10 overflow-x-auto md:flex-row md:gap-20 snap-x snap-mandatory no-scrollbar">
+
+                <!-- SF 1 -->
+                <div class="relative w-64 h-64 flex-shrink-0 rounded-2xl overflow-hidden group snap-center">
+                    <img src="image.png" alt="Feature Image" class="w-full h-full object-cover">
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-300 to-transparent opacity-0
+                    group-hover:opacity-100 transition duration-500"></div>
+                    <!-- MOVING TEXT -->
+                    <div class="w-full absolute bottom-0 text-black text-xs font-bold bg-gray-300 px-6 py-2
+                                transition-all duration-500 transform group-hover:-translate-y-20 group-hover:bg-transparent">
+                        Special Feature</div>
+                </div>
+
+                <!-- SF 2 -->
+                <div class="relative w-64 h-64 flex-shrink-0 rounded-2xl overflow-hidden group snap-center">
+                    <img src="image.png" alt="Feature Image" class="w-full h-full object-cover">
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-300 to-transparent opacity-0
+                    group-hover:opacity-100 transition duration-500"></div>
+                    <!-- MOVING TEXT -->
+                    <div class="w-full absolute bottom-0 text-black text-xs font-bold bg-gray-300 px-6 py-2
+                            transition-all duration-500 transform group-hover:-translate-y-20 group-hover:bg-transparent">
+                        Special Feature</div>
+                </div>
+
+                <!-- SF 3 -->
+                <div class="relative w-64 h-64 flex-shrink-0 rounded-2xl overflow-hidden group snap-center">
+                    <img src="image.png" alt="Feature Image" class="w-full h-full object-cover">
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-300 to-transparent opacity-0
+                    group-hover:opacity-100 transition duration-500"></div>
+                    <!-- MOVING TEXT -->
+                    <div class="w-full absolute bottom-0 text-black text-xs font-bold bg-gray-300 px-6 py-2
+                                transition-all duration-500 transform group-hover:-translate-y-20 group-hover:bg-transparent">
+                        Special Feature</div>
+                </div>
+            </div>
+    
+            <!--js for special features-->
+            <script>
+                const features = Vue.createApp({
+                    data() {
+                        return {menuOpen: false};},
+                    methods: {
+                        toggleMenu() {
+                            this.menuOpen = !this.menuOpen;}}
+                });
+                features.mount("#features");
+            </script>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="reviews" class="mt-80 md:mt-20 md:mt-80 scroll-mt-40 px-6">
+            <div class="flex items-center justify-center space-x-1 gap-10">
+                <!-- LEFT ARROW NAV -->
+                <button class="hidden md:block w-[70px] h-[70px] flex-shrink-0">
+                    <img src="left.png" alt="left arrow" class="transition-all duration-300 ease-out hover:opacity-0 hover:-translate-x-2">
+                </button>
+        
+                <!-- REVIEW CONTAINER -->
+                <div class="relative w-[800px] h-[400px] mx-auto rounded-2xl overflow-hidden md:bg-gray-300 flex">
+                    <!-- image -->
+                    <img src="image1.png" alt="review image" class="hidden md:block w-2/5 h-full object-cover"/>
+                    <div class="absolute inset-y-0 left-[160px] w-3/5 w-[20%] bg-gradient-to-l from-gray-300 to-transparent hidden md:block"></div>
+
+                    <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-black text-lg">Customer Name</h3>
+                        <p class="text-black mt-2 text-sm font-helvetica-light text-justify leading-relaxed break-words">
+                            <span class="text-2xl">“</span><br>The app is a convenient way to get agricultural products delivered quickly and efficiently.
+                            The interface is easy to navigate, and the ordering process is smooth. Delivery times vary, but overall, the service is reliable.
+                            A good option for those in need of fresh supplies without the hassle. <br><span class="text-2xl absolute right-5 md:right-20">“</span>
+                        </p>
+                    </div>
+                </div>
+        
+                <!-- RIGHT ARROW NAV -->
+                <button class="hidden md:block w-[70px] h-[70px] flex-shrink-0">
+                    <img src="right.png" alt="right arrow" class="transition-all duration-300 ease-out hover:opacity-0 hover:translate-x-2">
+                </button>
+            </div>
+        </section>        
+
+    <!-- CTA CTA CTA CTA -->    
+    <section id="cta" class="mt-80 py-20 relative flex flex-col items-center text-center scroll-mt-56 px-6">
+        <h2 class="text-5xl font-bold">Make your products move.</h2>
+        <p class="text-lg mt-4 max-w-3xl font-helvetica-light">
+            Unlock the full potential of your harvest with our expert delivery service tailored for agriculture.
+            Whether you're shipping fresh produce or specialty crops, count on us for reliable, on-time deliveries that keep your business thriving.
+        </p>
+        
+        <button class="mt-6 px-8 py-3 bg-gray-300 text-black rounded-xl hover:bg-black hover:text-white transition">
+            Sign Up
+        </button>
+    </section>
+
+
+</body>
+
+<footer class="mt-80">
+    <div class="max-w-screen-xl mx-auto px-10 flex flex-col items-center pb-20 gap-10">
+
+        <!-- NAVIGATION LINKS WITH AGRIMOVE -->
+        <div class="w-full flex flex-col items-center md:flex-row md:justify-center md:items-center gap-12">
+            <h2 class="text-black text-2xl font-bold">AGRIMOVE</h2>
+
+            <!-- HR LINE -->
+            <img src="hr.png" alt="divider" class="md:hidden mt-6 w-[1030px] h-[12px]">
+
+            <div class="grid grid-cols-3 gap-x-10 gap-y-4 text-sm font-bold text-black text-center md:flex md:gap-20">
+                <span>Product</span>
+                <span>Features</span>
+                <span>Resources</span>
+                <span>About</span>
+                <span>Blog</span>
+                <span>Support</span>
+            </div>
+        </div>
+
+        <!-- HR LINE -->
+        <img src="hr.png" alt="divider" class="hidden md:block mt-6 w-[1030px] h-[12px]">
+
+        <!-- SOCIAL MEDIA ICONS -->
+        <div class="flex gap-6 mt-8">
+            <img src="twitter.png" alt="Twitter" class="w-10 h-10">
+            <img src="facebook.png" alt="Facebook" class="w-10 h-10">
+            <img src="instagram.png" alt="Instagram" class="w-10 h-10">
+        </div>
+
+        <!-- COPYRIGHT & PRIVACY TERMS -->
+        <div class="flex md:flex-row text-sm text-black mt-6 gap-10">
+            <span>© 2024 — 2025</span>
+            <span>Privacy — Terms</span>
+        </div>
+    </div>
+</footer>
+
+</html>
